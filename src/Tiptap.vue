@@ -107,10 +107,12 @@ import TableHeader from '@tiptap/extension-table-header';
 import TableRow from '@tiptap/extension-table-row';
 import Image from '@tiptap/extension-image';
 
-let startContent = exampleContent
+let startContent = JSON.parse(JSON.stringify(exampleContent))
 
 const editor = new Editor({
 	content: startContent,
+	editable: true,
+	injectCSS: false,
 	extensions: [
 		Underline,
 		CharacterCount,
