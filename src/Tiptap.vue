@@ -121,12 +121,12 @@ const editor = new Editor({
 			levels: [1, 2, 3],
 			},
 		}),
-		Typography.configure({
+		Typography/* .configure({
 			openDoubleQuote: false,
 			closeDoubleQuote: false,
 			openSingleQuote: false,
 			closeSingleQuote: false,
-		}),
+		}) */,
 		TextAlign.configure({
 			types: ['heading', 'paragraph', 'blockquote'],
 		}),
