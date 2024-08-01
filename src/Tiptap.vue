@@ -110,7 +110,7 @@ import Image from '@tiptap/extension-image';
 let startContent = JSON.parse(JSON.stringify(exampleContent))
 
 const editor = new Editor({
-	content: startContent,
+	// content: startContent,
 	editable: true,
 	injectCSS: false,
 	extensions: [
@@ -118,15 +118,15 @@ const editor = new Editor({
 		CharacterCount,
 		StarterKit.configure({
 			heading: {
-			levels: [1, 2, 3],
+				levels: [1, 2, 3],
 			},
 		}),
-		Typography/* .configure({
-			openDoubleQuote: false,
-			closeDoubleQuote: false,
-			openSingleQuote: false,
-			closeSingleQuote: false,
-		}) */,
+		Typography.configure({
+			openDoubleQuote: true,
+			closeDoubleQuote: true,
+			openSingleQuote: true,
+			closeSingleQuote: true,
+		}),
 		TextAlign.configure({
 			types: ['heading', 'paragraph', 'blockquote'],
 		}),
@@ -171,11 +171,13 @@ function getJSON() {
 .editor,
 .tiptap {
 	width: 100%;
+	min-width: 300px;
 	min-height: 100px;
 	overflow: auto;
 }
 
 .tiptap {
+	box-sizing: border-box;
 	border: 2px solid gray;
 	border-radius: 4px;
 	padding: 4px;
